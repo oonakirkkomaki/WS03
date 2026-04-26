@@ -4,10 +4,53 @@ body { background-color: rgb(34, 35, 36); }
 h1 { font-size: 2em; text-align: center; font-family: fantasy;}
 table { margin-left: auto; margin-right: auto;}
 form { margin-left: auto; margin-right: auto;}
+.animation-box { width: fit-content; }
+.pseudo-list { margin-left: auto; margin-right: auto; width: 450px; text-align: center;}
+.quote {font-size: 30px;}
 
 .intro {
 text-align: center;
 }
+
+.animation-box {
+        width: 30px;
+        height: 30px;
+        background-color: rgb(196, 97, 196);
+        position: relative;
+        animation: move 2s infinite alternate;
+      }
+      
+      @keyframes move {
+        from {
+          left: 0px;
+        }
+        to {
+          left: 95%;
+        }
+      }
+
+.transition-button {
+background-color: #b05ec0;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+padding: 5px 10px;
+border: none;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+      
+.transition-button:hover {
+background-color: rgb(59, 14, 63);
+color: #b05ec0
+}
+
+.filter-image {
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+      }
+      
+      .filter-image:hover {
+        filter: grayscale(0%);
+      }
 
 .content-box {
   width: 300px;  
@@ -16,6 +59,14 @@ text-align: center;
   background-color: #cfc8d8;
   border: 5px solid #9738b4;
 }
+
+.pseudo-list li:nth-child(odd) {
+        background-color: rgb(216, 141, 235);
+      }
+      
+      .pseudo-list li:nth-child(even) {
+        background-color: rgb(184, 108, 187);
+      }
 
 table {
       width: 60%;
@@ -68,3 +119,19 @@ form {
     input[type="submit"]:hover {
       background-color: #521d5f;
     }
+
+    .quote {
+        position: relative;
+        padding-left: 30px;
+        font-style: italic;
+        color: #c462bb;
+      }
+      
+      .quote::before {
+        content: '“';
+        font-size: 40px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: lightgray;
+      }
